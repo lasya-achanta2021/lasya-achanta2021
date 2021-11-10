@@ -1,0 +1,52 @@
+import tkinter
+from tkinter import *
+from PIL import Image, ImageTk
+
+root = Tk()
+
+# Create a photoimage object of the image in the path
+image1 = Image.open("kiet logo.png")
+test = ImageTk.PhotoImage(image1)
+label1 = tkinter.Label(image=test)
+label1.image = test
+
+# Position image
+label1.place(x=0, y=0)
+def send():
+    send="you => "+e.get()
+    text.insert(END,"\n"+send)
+    if(e.get()=="hello"):
+        text.insert(END,"\n"+"Luma => Hi,i am Luma")
+    elif(e.get()==("i need to know something")):
+        text.insert(END,"\n"+"Luma => how can i help you? ")
+    elif(e.get()==("can we know the best colleges in kakinada?")):
+        text.insert(END,"\n"+"Luma => there are KIET,PYDAH,ideal,pragathi")
+    elif(e.get()==("can i know the specialities in KIET?")):
+        text.insert(END,"\n"+"Luma => there are many activities happening in kiet")
+    elif(e.get()==("can you name those activities?")):
+        text.insert(END,"\n"+"Luma => yes,ABHIYAAN,NCC,hackathon")
+    elif(e.get()==("what is ABHIYAAN?")):
+        text.insert(END,"\n"+"Luma => it is a event of 21 days driven by KIET and KIEW Toastmasters")
+    elif(e.get()==("toastmasters? what is this toastmasters?")):
+        text.insert(END,"\n"+"Luma =>toastmasters is a public speaking platform where we can represent ourself world wide")
+    elif(e.get()==("what is the use of toastmasters?")):
+        text.insert(END,"\n"+"Luma =>it will help you in loosing your stage fear and built your communication skills")
+    elif(e.get()==("how students can move to toastmasters?")):
+        text.insert(END,"\n"+"Luma =>there will be a screaning process in which they should talk for a minute")
+    elif(e.get()==("how toastmasters will train when they join?")):
+        text.insert(END,"\n"+"Luma =>when they join in toastmasters they will allot a mentor for each one,they will help you in building your confidence")
+    elif (e.get() == ("thank you for your help")):
+        text.insert(END,"\n" + "Luma => your welcome :)))")
+
+        else:
+        text.insert(END,"\n" + "sorry, i didn't get it")
+
+
+
+text= Text(root)
+text.grid(row=0, column=0, columnspan=2)
+e= Entry(root, width= 50)
+send= Button(root, text="send", command=send).grid(row=1, column=1)
+e.grid(row=1, column=0)
+root.title("kiet_chatbot")
+root.mainloop()
